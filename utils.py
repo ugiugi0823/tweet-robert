@@ -2,7 +2,7 @@
 import pandas as pd
 import torch
 from models import ret_tokenizer
-
+import os
 
 
 
@@ -121,6 +121,11 @@ def format_time(elapsed):
     # Format as hh:mm:ss
     return str(datetime.timedelta(seconds=elapsed_rounded))
                                                 
-                                                
+
+
+
+def setup():
+  os.makedirs("model", exist_ok=True)
+
                                                 
   
