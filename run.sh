@@ -13,8 +13,7 @@ login(token='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')
 wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 
 
-git clone https://github.com/ugiugi0823/tweet-robert.git
-cd /content/tweet-robert
+
 
 
 python main.py --batch_size 32 \
