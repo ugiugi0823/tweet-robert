@@ -22,4 +22,4 @@ python main.py --batch_size 32 \
   --epochs 3 \
   --run_name 'wow_project' \
   --project_name 'final_project' \
-  --entity_name 'ugiugi' 
+  --entity_name 'ugiugi'
