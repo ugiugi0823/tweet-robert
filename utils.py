@@ -121,7 +121,4 @@ def format_time(elapsed):
                                                 
                                                 
                                                 
-                                                
-                                   
-                                                num_training_steps = total_steps)
-    return scheduler
+  
