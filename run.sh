@@ -14,12 +14,12 @@ wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 
 
 
+# 주의!!! lr 은 바꾸지 마세요! .sh 로 실행하니까, 문제 생겨요. main.py 는 상관없어요!
 
-
-python main.py --batch_size 32 \
-  --learning_rate 5e-5 \
-  --optimizer 'adam' \
-  --epochs 3 \
-  --run_name 'wow_project' \
-  --project_name 'final_project' \
-  --entity_name 'ugiugi'
+python main.py \
+    --batch_size 32 \
+    --optimizer 'adam' \
+    --epochs 3 \
+    --run_name 'wow_project' \
+    --project_name 'final_project' \
+    --entity_name 'ugiugi'
