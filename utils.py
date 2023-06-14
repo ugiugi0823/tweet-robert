@@ -8,7 +8,7 @@ from models import ret_tokenizer
 input_ids = []
 attention_masks = []
 
-df = pd.read_csv('/content/data/train_val.csv')
+df = pd.read_csv('./data/train_val.csv')
 sentences = df.sentence.values
 labels = df.label.astype(int).values
 
