@@ -4,16 +4,18 @@ import torch
 from models import ret_tokenizer
 
 
-# Tokenize all of the sentences and map the tokens to thier word IDs.
-input_ids = []
-attention_masks = []
 
-df = pd.read_csv('./data/train_val.csv')
-sentences = df.sentence.values
-labels = df.label.astype(int).values
+
+
 
 # For every sentence...
 def get_input_mask_label():
+  df = pd.read_csv('./data/train_val.csv')
+  sentences = df.sentence.values
+  labels = df.label.astype(int).values
+  # Tokenize all of the sentences and map the tokens to thier word IDs.
+  input_ids = []
+  attention_masks = []
   tokenizer = ret_tokenizer()
   for sent in sentences:
       # `encode_plus` will:
