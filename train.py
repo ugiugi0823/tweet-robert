@@ -4,9 +4,9 @@ import numpy as np
 import datetime
 import time
 import torch
-
+import wandb
 from models import ret_model
-from utils import ret_optim, ret_scheduler, format_time
+from utils import ret_optim, ret_scheduler, format_time, flat_accuracy
 from dataloader import ret_dataloader
 
 
@@ -15,8 +15,13 @@ from dataloader import ret_dataloader
 
     # Set the seed value all over the place to make this reproducible.
 def train(args):
+    run_name = args.run_name
+    project_name = args.project_name
+    entity_name = args.entity_name
+    wandb.init(project=project_name, entity=entity_name)
+    wandb.run.name = run_name
 
-
+    low_avg_val_accuracy = 0
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(device)
     model = ret_model()
@@ -137,7 +142,7 @@ def train(args):
         # Measure how long this epoch took.
         training_time = format_time(time.time() - t0)
 
-        # wandb.log({'avg_train_loss':avg_train_loss})
+        wandb.log({'avg_train_loss':avg_train_loss})
 
         print("")
         print("  Average training loss: {0:.2f}".format(avg_train_loss))
@@ -206,18 +211,26 @@ def train(args):
             # Calculate the accuracy for this batch of test sentences, and
             # accumulate it over all batches.
             total_eval_accuracy += flat_accuracy(logits, label_ids)
-
+          
 
         # Report the final accuracy for this validation run.
         avg_val_accuracy = total_eval_accuracy / len(validation_dataloader)
         print("  Accuracy: {0:.2f}".format(avg_val_accuracy))
+
+        if low_avg_val_accuracy < avg_val_accuracy:
+          low_avg_val_accuracy = avg_val_accuracy
+          print('val_accuracy 가 최고 갱신')
+          torch.save(model, './model/best.pth')
+        else:
+          print('최고 갱신 못했어요!')
+
 
         # Calculate the average loss over all of the batches.
         avg_val_loss = total_eval_loss / len(validation_dataloader)
 
         # Measure how long the validation run took.
         validation_time = format_time(time.time() - t0)
-        # wandb.log({'val_accuracy':avg_val_accuracy,'avg_val_loss':avg_val_loss})
+        wandb.log({'val_accuracy':avg_val_accuracy,'avg_val_loss':avg_val_loss})
         print("  Validation Loss: {0:.2f}".format(avg_val_loss))
         print("  Validation took: {:}".format(validation_time))
 
