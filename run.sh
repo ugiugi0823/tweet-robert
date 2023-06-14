@@ -3,9 +3,9 @@ pip install transformers
 pip install wandb
 # 허깅페이스 로그인 토큰
 # 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
-from huggingface_hub import login
-import wandb
-login(token='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')
+
+
+huggingface-cli login --token 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
 # inisw (중요)
 # 2be184e31a96c722bfebdfe35f726042eb8e526c
 # 현욱
