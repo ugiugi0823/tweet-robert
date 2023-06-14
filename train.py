@@ -109,7 +109,7 @@ def train(args):
                                 attention_mask=b_input_mask,
                                 labels=b_labels)
             loss, logits = outputs['loss'], outputs['logits']
-            wandb.log({'train_batch_loss':loss.item()})
+            # wandb.log({'train_batch_loss':loss.item()})
             # Accumulate the training loss over all of the batches so that we can
             # calculate the average loss at the end. `loss` is a Tensor containing a
             # single value; the `.item()` function just returns the Python value
@@ -137,7 +137,7 @@ def train(args):
         # Measure how long this epoch took.
         training_time = format_time(time.time() - t0)
 
-        wandb.log({'avg_train_loss':avg_train_loss})
+        # wandb.log({'avg_train_loss':avg_train_loss})
 
         print("")
         print("  Average training loss: {0:.2f}".format(avg_train_loss))
@@ -217,7 +217,7 @@ def train(args):
 
         # Measure how long the validation run took.
         validation_time = format_time(time.time() - t0)
-        wandb.log({'val_accuracy':avg_val_accuracy,'avg_val_loss':avg_val_loss})
+        # wandb.log({'val_accuracy':avg_val_accuracy,'avg_val_loss':avg_val_loss})
         print("  Validation Loss: {0:.2f}".format(avg_val_loss))
         print("  Validation took: {:}".format(validation_time))
 
