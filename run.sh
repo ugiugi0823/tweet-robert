@@ -17,7 +17,7 @@ wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 # 주의!!! lr 은 바꾸지 마세요! .sh 로 실행하니까, 문제 생겨요. main.py 는 상관없어요!
 
 python main.py \
-    --batch_size 32 \
+    --batch_size 512 \
     --optimizer 'adam' \
     --learning_rate 5.999e-5 \
     --epochs 1 \
