@@ -17,6 +17,7 @@ def get_input_mask_label():
   input_ids = []
   attention_masks = []
   tokenizer = ret_tokenizer()
+  tokenizer.save_pretrained("./model")
   for sent in sentences:
       # `encode_plus` will:
       #   (1) Tokenize the sentence.
