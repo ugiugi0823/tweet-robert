@@ -8,7 +8,7 @@ from dataset import get_dataset
 
 # WANDB PARAMETER
 def ret_dataloader(args):
-    train_dataset, val_dataset = get_dataset()
+    train_dataset, val_dataset = get_dataset(args)
     batch_size = args.batch_size
     
     print('batch_size = ', batch_size)
