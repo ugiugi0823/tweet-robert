@@ -23,4 +23,4 @@ python main.py \
     --run_name 'wow_project_save' \
     --project_name 'final_project' \
     --entity_name 'ugiugi' \
-    --model_fold_name 'inisw_tweet_robert'
+    --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta'
