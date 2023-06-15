@@ -9,7 +9,9 @@ import os
 
 
 # For every sentence...
-def get_input_mask_label():
+def get_input_mask_label(args):
+  model_fold_name = args.model_fold_name
+  
   df = pd.read_csv('./data/train_val.csv')
   sentences = df.sentence.values
   labels = df.label.astype(int).values
@@ -17,7 +19,7 @@ def get_input_mask_label():
   input_ids = []
   attention_masks = []
   tokenizer = ret_tokenizer()
-  tokenizer.save_pretrained("./model2")
+  tokenizer.save_pretrained(f"./{model_fold_name}")
   for sent in sentences:
       # `encode_plus` will:
       #   (1) Tokenize the sentence.
@@ -125,9 +127,10 @@ def format_time(elapsed):
 
 
 
-def setup():
+def setup(args):
+  model_fold_name = args.model_fold_name
   os.makedirs("model", exist_ok=True)
-  os.makedirs("model2", exist_ok=True)
+  os.makedirs(model_fold_name, exist_ok=True)
 
                                                 
   
