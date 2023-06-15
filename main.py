@@ -16,9 +16,10 @@ if __name__ == '__main__':
   p.add_argument("--run_name", type=str, default='wow_project', help='wandb, run_name')
   p.add_argument("--project_name", type=str, default='final_project', help='wandb, project_name')
   p.add_argument("--entity_name", type=str, default='ugiugi', help='wandb, entity_name')
-
+  p.add_argument("--model_fold_name", type=str, default='inisw_tweet_robert', help='wandb, model_fold_name')
+  
   args = p.parse_args()
-  setup()
+  setup(args)
   train(args)
   
   
