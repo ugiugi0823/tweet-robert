@@ -221,6 +221,8 @@ def train(args):
           low_avg_val_accuracy = avg_val_accuracy
           print('val_accuracy 가 최고 갱신')
           torch.save(model, './model/best.pth')
+          model.save_pretrained("./model")
+            
         else:
           print('최고 갱신 못했어요!')
 
