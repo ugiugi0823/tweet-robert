@@ -15,9 +15,12 @@ from dataloader import ret_dataloader
 
     # Set the seed value all over the place to make this reproducible.
 def train(args):
+    # args
     run_name = args.run_name
     project_name = args.project_name
     entity_name = args.entity_name
+    model_fold_name = args.model_fold_name
+
     wandb.init(project=project_name, entity=entity_name)
     wandb.run.name = run_name
 
@@ -221,7 +224,7 @@ def train(args):
           low_avg_val_accuracy = avg_val_accuracy
           print('val_accuracy 가 최고 갱신')
           torch.save(model, './model/best.pth')
-          model.save_pretrained("./model2")
+          model.save_pretrained(f"./{model_fold_name}")
             
         else:
           print('최고 갱신 못했어요!')
