@@ -2,8 +2,8 @@
 from torch.utils.data import TensorDataset, random_split
 from utils import get_input_mask_label
 
-def get_dataset():
-  input_ids, attention_masks, labels = get_input_mask_label()
+def get_dataset(args):
+  input_ids, attention_masks, labels = get_input_mask_label(args)
   # Combine the training inputs into a TensorDataset.
   dataset = TensorDataset(input_ids, attention_masks, labels)
 
