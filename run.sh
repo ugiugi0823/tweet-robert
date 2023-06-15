@@ -19,7 +19,8 @@ wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 python main.py \
     --batch_size 32 \
     --optimizer 'adam' \
-    --epochs 3 \
-    --run_name 'wow_project' \
+    --epochs 1 \
+    --run_name 'wow_project_save' \
     --project_name 'final_project' \
-    --entity_name 'ugiugi'
+    --entity_name 'ugiugi' \
+    --model_fold_name 'inisw_tweet_robert'
