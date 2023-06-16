@@ -141,7 +141,7 @@ def setup(args):
   run_name = args.run_name
 
   if args.drive:
-    if 'drive/MyDrive' in os.listdir('/content'):
+    if 'drive' in os.listdir('/content'):
       print('구글 코랩 드라이브로 시작합니다.')
       os.makedirs("inisw08", exist_ok=True)
       os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}", exist_ok=True)
