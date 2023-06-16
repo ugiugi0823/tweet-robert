@@ -3,23 +3,32 @@ import pandas as pd
 import torch
 from models import ret_tokenizer
 import os
-
+from google.colab import drive
 
 
 
 
 # For every sentence...
 def get_input_mask_label(args):
+  # args
   model_fold_name = args.model_fold_name
+  run_name = args.run_name
+  data_name = args.data
+
   
-  df = pd.read_csv('./data/train_val.csv')
+  df = pd.read_csv(f'./data/{data_name}.csv')
   sentences = df.sentence.values
   labels = df.label.astype(int).values
   # Tokenize all of the sentences and map the tokens to thier word IDs.
   input_ids = []
   attention_masks = []
   tokenizer = ret_tokenizer()
-  tokenizer.save_pretrained(f"./{model_fold_name}")
+  if args.drive:
+    tokenizer.save_pretrained(f"/content/drive/MyDrive/{model_fold_name}/{model_fold_name}")
+  else:
+    tokenizer.save_pretrained(f"./{model_fold_name}/{model_fold_name}")
+    
+
   for sent in sentences:
       # `encode_plus` will:
       #   (1) Tokenize the sentence.
@@ -129,8 +138,24 @@ def format_time(elapsed):
 
 def setup(args):
   model_fold_name = args.model_fold_name
-  os.makedirs("model", exist_ok=True)
-  os.makedirs(model_fold_name, exist_ok=True)
+  run_name = args.run_name
+
+  if args.drive:
+    if 'drive/MyDrive' in os.listdir('/content'):
+      os.makedirs("inisw08", exist_ok=True)
+      os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}", exist_ok=True)
+      os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}", exist_ok=True)
+    else:
+      print("Google Drive가 연결되어 있지 않습니다.")
+    # drive.mount('/content/drive')
+    
+  else:
+    print('로컬로 시작합니다!')
+    os.makedirs(f"./{model_fold_name}", exist_ok=True)
+    os.makedirs(f"./{model_fold_name}/{run_name}", exist_ok=True)
+
+
+  
 
                                                 
   
