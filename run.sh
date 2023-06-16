@@ -10,18 +10,20 @@ huggingface-cli login --token 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
 # 2be184e31a96c722bfebdfe35f726042eb8e526c
 # 현욱
 # 122f007f67ba33fd04a03ee9b81489dfb42264a6
-wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
+wandb login --relogin '2be184e31a96c722bfebdfe35f726042eb8e526c'
 
 
 
 # 주의!!! lr 은 바꾸지 마세요! .sh 로 실행하니까, 문제 생겨요. main.py 는 상관없어요!
 
 python main.py \
-    --batch_size 512 \
+    --drive True \
+    --data 'result_all' \
+    --batch_size 256 \
     --optimizer 'sgd' \
     --learning_rate 5.999e-5 \
-    --epochs 1 \
-    --run_name 'wow_project_save' \
-    --project_name 'final_project' \
-    --entity_name 'ugiugi' \
+    --epochs 30 \
+    --run_name 'inisw08-twitter-sentiment-analysis-roberta_ep30_bs256_all' \
+    --project_name 'inisw08-twitter-sentiment-analysis-roberta' \
+    --entity_name 'inisw08' \
     --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta'
