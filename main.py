@@ -9,6 +9,8 @@ from utils import setup
 if __name__ == '__main__':
 
   p = argparse.ArgumentParser()
+  p.add_argument("--data", type=str, default='train_val', help="data name")
+  p.add_argument("--drive", type=bool, default=False, help="drive connet")
   p.add_argument("--batch_size", type=int, default=32, help="batch_size")
   p.add_argument("--learning_rate", type=float, default=5e-5, help="learning_rate")
   p.add_argument("--optimizer", type=str, default='adam', help="['adam', 'sgd', 'rmsprop', 'adagrad'] 중 선택")
