@@ -223,8 +223,12 @@ def train(args):
         if low_avg_val_accuracy < avg_val_accuracy:
           low_avg_val_accuracy = avg_val_accuracy
           print('val_accuracy 가 최고 갱신')
-          torch.save(model, './model/best.pth')
-          model.save_pretrained(f"./{model_fold_name}")
+          
+          
+          if args.drive:
+            model.save_pretrained(f"/content/drive/MyDrive/{model_fold_name}/{model_fold_name}")
+          else:
+            model.save_pretrained(f"./{model_fold_name}/{model_fold_name}")
             
         else:
           print('최고 갱신 못했어요!')
