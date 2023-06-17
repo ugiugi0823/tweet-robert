@@ -127,6 +127,15 @@ def flat_accuracy(preds, labels):
     return np.sum(pred_flat == labels_flat) / len(labels_flat)
 
 
+
+def get_arr(preds, labels):
+    pred_flat = np.argmax(preds, axis=1).flatten()
+    labels_flat = labels.flatten()
+    
+    return pred_flat, labels_flat
+
+
+
 def format_time(elapsed):
     '''
     Takes a time in seconds and returns a string hh:mm:ss
