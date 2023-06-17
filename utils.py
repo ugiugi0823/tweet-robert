@@ -14,10 +14,12 @@ def get_input_mask_label(args):
   model_fold_name = args.model_fold_name
   run_name = args.run_name
   data_name = args.data
-
+  print(args.test)
   if args.test:
+    print('test set 로드')
     df = pd.read_csv(f'./data/{args.test_data}.csv')
   else:
+    print('train set 로드')
     df = pd.read_csv(f'./data/{data_name}.csv')
     
   
@@ -28,9 +30,9 @@ def get_input_mask_label(args):
   attention_masks = []
   tokenizer = ret_tokenizer(args)
   if args.drive:
-    tokenizer.save_pretrained(f"/content/drive/MyDrive/{model_fold_name}/{model_fold_name}")
+    tokenizer.save_pretrained(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}")
   else:
-    tokenizer.save_pretrained(f"./{model_fold_name}/{model_fold_name}")
+    tokenizer.save_pretrained(f"./{model_fold_name}/{run_name}")
     
 
   for sent in sentences:
