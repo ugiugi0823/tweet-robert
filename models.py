@@ -19,8 +19,8 @@ Token IDs:  [2256, 2814, 2180, 1005, 1056, 4965, 2023, 4106, 1010, 2292, 2894, 1
 # models
 from transformers import AdamW, BertConfig
 from transformers import AutoModelForSequenceClassification
-def ret_model():
-
+def ret_model(args):
+    test_model_name = args.test_model_name
     model = AutoModelForSequenceClassification.from_pretrained(
         "cardiffnlp/twitter-roberta-base-sentiment",
         num_labels = 3,
