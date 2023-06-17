@@ -30,7 +30,7 @@ def train(args):
     model = ret_model(args)
     model.to(device)
     #wandb.init(config=sweep_defaults)
-    train_dataloader,validation_dataloader = ret_dataloader(args)
+    train_dataloader,validation_dataloader, test_dataloader = ret_dataloader(args)
     optimizer = ret_optim(model, args)
     scheduler = ret_scheduler(train_dataloader,optimizer, args)
 
@@ -226,9 +226,9 @@ def train(args):
           
           
           if args.drive:
-            model.save_pretrained(f"/content/drive/MyDrive/{model_fold_name}/{model_fold_name}")
+            model.save_pretrained(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}")
           else:
-            model.save_pretrained(f"./{model_fold_name}/{model_fold_name}")
+            model.save_pretrained(f"./{model_fold_name}/{run_name}")
             
         else:
           print('최고 갱신 못했어요!')
