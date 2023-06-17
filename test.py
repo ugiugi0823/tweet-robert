@@ -127,7 +127,7 @@ def test(args):
   # Report the final accuracy for this test run.
   avg_val_accuracy = total_eval_accuracy / len(test_dataloader)
   # wandb.log({'val_accuracy':avg_val_accuracy})
-  # print("  Accuracy: {0:.2f}".format(avg_val_accuracy))
+  print("  Accuracy: {0:.2f}".format(avg_val_accuracy))
 
 
 
