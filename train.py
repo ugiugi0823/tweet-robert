@@ -27,7 +27,7 @@ def train(args):
     low_avg_val_accuracy = 0
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(device)
-    model = ret_model()
+    model = ret_model(args)
     model.to(device)
     #wandb.init(config=sweep_defaults)
     train_dataloader,validation_dataloader = ret_dataloader(args)
