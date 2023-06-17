@@ -15,8 +15,12 @@ def get_input_mask_label(args):
   run_name = args.run_name
   data_name = args.data
 
+  if args.test:
+    df = pd.read_csv(f'./data/{args.test_name}.csv')
+  else:
+    df = pd.read_csv(f'./data/{data_name}.csv')
+    
   
-  df = pd.read_csv(f'./data/{data_name}.csv')
   sentences = df.sentence.values
   labels = df.label.astype(int).values
   # Tokenize all of the sentences and map the tokens to thier word IDs.
