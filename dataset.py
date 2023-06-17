@@ -13,11 +13,13 @@ def get_dataset(args):
   # Calculate the number of samples to include in each set.
   train_size = int(0.9 * len(dataset))
   val_size = len(dataset) - train_size
+  test_size = len(test_dataset) 
 
   # Divide the dataset by randomly selecting samples.
   train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 
   print('{:>5,} training samples'.format(train_size))
   print('{:>5,} validation samples'.format(val_size))
+  print('{:>5,} test samples'.format(test_size))
 
   return train_dataset, val_dataset, test_dataset
