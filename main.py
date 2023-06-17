@@ -27,9 +27,13 @@ if __name__ == '__main__':
   
   
   
-  project_test_name
+  
   args = p.parse_args()
   setup(args)
-  train(args)
+  if args.test:
+    test(args)
+  else:
+    train(args)
+  
   
   
