@@ -3,7 +3,7 @@ from transformers import AutoTokenizer
 
 def ret_tokenizer():
   # Load the cardiffnlp/twitter-roberta-base-sentiment tokenizer.
-  print('cardiffnlp/twitter-roberta-base-sentiment tokenizer...')
+  
   tokenizer = AutoTokenizer.from_pretrained('cardiffnlp/twitter-roberta-base-sentiment')
 
   return tokenizer
