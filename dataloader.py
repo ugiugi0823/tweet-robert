@@ -27,7 +27,7 @@ def ret_dataloader(args):
     test_dataloader = DataLoader(
                 test_dataset, # The validation samples.
                 sampler = SequentialSampler(test_dataset), # Pull out batches sequentially.
-                batch_size = batch_size # Evaluate with this batch size.
+                batch_size = 1 # Evaluate with this batch size.
             )
 
     
