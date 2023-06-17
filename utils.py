@@ -26,7 +26,7 @@ def get_input_mask_label(args):
   # Tokenize all of the sentences and map the tokens to thier word IDs.
   input_ids = []
   attention_masks = []
-  tokenizer = ret_tokenizer()
+  tokenizer = ret_tokenizer(args)
   if args.drive:
     tokenizer.save_pretrained(f"/content/drive/MyDrive/{model_fold_name}/{model_fold_name}")
   else:
