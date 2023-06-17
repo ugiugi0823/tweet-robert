@@ -8,7 +8,7 @@ from dataset import get_dataset
 
 # WANDB PARAMETER
 def ret_dataloader(args):
-    train_dataset, val_dataset = get_dataset(args)
+    train_dataset, val_dataset, test_dataset = get_dataset(args)
     batch_size = args.batch_size
     
     print('batch_size = ', batch_size)
@@ -23,4 +23,12 @@ def ret_dataloader(args):
                 sampler = SequentialSampler(val_dataset), # Pull out batches sequentially.
                 batch_size = batch_size # Evaluate with this batch size.
             )
-    return train_dataloader,validation_dataloader
+    
+    test_dataloader = DataLoader(
+                test_dataset, # The validation samples.
+                sampler = SequentialSampler(test_dataset), # Pull out batches sequentially.
+                batch_size = batch_size # Evaluate with this batch size.
+            )
+
+    
+    return train_dataloader,validation_dataloader, test_dataloader
