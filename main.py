@@ -22,7 +22,12 @@ if __name__ == '__main__':
   p.add_argument("--test", type=bool, default=False, help='test 하고 싶다면, true, 그리고, test_name도 적어주세요!')
   p.add_argument("--test_data", type=str, default='test', help='wandb, model_fold_name')
   p.add_argument("--test_model_name", type=str, default='ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all', help='wandb, model_fold_name')
+  p.add_argument("--project_test_name", type=str, default='test_project', help='wandb, project_name')
   
+  
+  
+  
+  project_test_name
   args = p.parse_args()
   setup(args)
   train(args)
