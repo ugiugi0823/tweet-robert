@@ -1,7 +1,7 @@
 import argparse
 from train import train 
 from utils import setup
-
+from test import test
 
 
 
