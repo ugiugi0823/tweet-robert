@@ -3,8 +3,10 @@ from transformers import AutoTokenizer
 
 def ret_tokenizer(args):
   if args.test:
+    print('test 모델 로드')
     token_name = args.test_model_name
   else:
+    print('original 모델 로드')
     token_name = "cardiffnlp/twitter-roberta-base-sentiment"
     
   # Load the cardiffnlp/twitter-roberta-base-sentiment tokenizer.
@@ -26,8 +28,10 @@ from transformers import AdamW, BertConfig
 from transformers import AutoModelForSequenceClassification
 def ret_model(args):
     if args.test:
+      print('test 모델 로드')
       tr_name = args.test_model_name
     else:
+      print('original 모델 로드')
       tr_name = "cardiffnlp/twitter-roberta-base-sentiment"
       
     
