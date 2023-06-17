@@ -19,6 +19,8 @@ if __name__ == '__main__':
   p.add_argument("--project_name", type=str, default='final_project', help='wandb, project_name')
   p.add_argument("--entity_name", type=str, default='ugiugi', help='wandb, entity_name')
   p.add_argument("--model_fold_name", type=str, default='inisw_tweet_robert', help='wandb, model_fold_name')
+  p.add_argument("--test", type=bool, default=False, help='test 하고 싶다면, true, 그리고, test_name도 적어주세요!')
+  p.add_argument("--test_data", type=str, default='test', help='wandb, model_fold_name')
   
   args = p.parse_args()
   setup(args)
