@@ -16,7 +16,7 @@ def get_input_mask_label(args):
   data_name = args.data
 
   if args.test:
-    df = pd.read_csv(f'./data/{args.test_name}.csv')
+    df = pd.read_csv(f'./data/{args.test_data}.csv')
   else:
     df = pd.read_csv(f'./data/{data_name}.csv')
     
