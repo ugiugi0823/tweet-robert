@@ -27,7 +27,8 @@ python main.py \
     --project_name 'inisw08-twitter-sentiment-analysis-roberta' \
     --entity_name 'inisw08' \
     --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta' \
+    --test False \
     --test_data 'test' \
-    --test_model_name 'ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all'
+    --test_model_name 'ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all' \
     --project_test_name 'which-SA-model-is-test'
     
