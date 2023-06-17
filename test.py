@@ -89,7 +89,7 @@ def test(args):
           loss, logits = outputs['loss'], outputs['logits']
 
       # Accumulate the test loss.
-      total_eval_loss += loss.item()
+      # total_eval_loss += loss.item()
 
       # Move logits and labels to CPU
       logits = logits.detach().cpu().numpy()
