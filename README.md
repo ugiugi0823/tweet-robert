@@ -14,3 +14,8 @@ from google.colab import drive
 drive.mount('/content/drive')
 ```
 
+Git Repo
+```
+!git clone https://github.com/ugiugi0823/tweet-sa-robert.git
+%cd tweet-sa-robert
+```
