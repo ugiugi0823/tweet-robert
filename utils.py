@@ -152,18 +152,18 @@ def format_time(elapsed):
 
 
 def setup(args):
+  print('setup 구간')
+  print('drive connect',args.drive)
+  
   model_fold_name = args.model_fold_name
   run_name = args.run_name
 
   if args.drive:
-    if 'drive' in os.listdir('/content'):
-      print('구글 코랩 드라이브로 시작합니다.')
-      os.makedirs("inisw08", exist_ok=True)
-      os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}", exist_ok=True)
-      os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}", exist_ok=True)
-    else:
-      print("Google Drive가 연결되어 있지 않습니다.")
-    # drive.mount('/content/drive')
+    assert 'drive' in os.listdir('/content') # 드라이브 연결 안해놓았어요! 코랩 드라이브 연결해주세요!
+    print('구글 코랩 드라이브로 시작합니다.')
+    os.makedirs("inisw08", exist_ok=True)
+    os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}", exist_ok=True)
+    os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}", exist_ok=True)
     
   else:
     print('로컬로 시작합니다!')
