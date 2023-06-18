@@ -1,4 +1,4 @@
-
+# train.sh
 pip install transformers
 pip install wandb
 
@@ -22,7 +22,7 @@ wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 
 python main.py \
     --drive \
-    --data 'result_all' \
+    --data 'train_val' \
     --batch_size 256 \
     --optimizer 'sgd' \
     --learning_rate 5.999e-5 \
@@ -31,7 +31,6 @@ python main.py \
     --project_name 'inisw08-twitter-sentiment-analysis-roberta' \
     --entity_name 'inisw08' \
     --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta' \
-    --test \
     --test_data 'test_final' \
     --test_model_name 'ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all' \
     --project_test_name 'which-SA-model-is-test'
