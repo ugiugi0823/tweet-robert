@@ -1,5 +1,9 @@
 # models
 from transformers import AutoTokenizer
+from transformers import AdamW, BertConfig
+from transformers import AutoModelForSequenceClassification
+
+
 
 def ret_tokenizer(args):
   if args.test:
@@ -23,9 +27,7 @@ Tokenized:  ['our', 'friends', 'won', "'", 't', 'buy', 'this', 'analysis', ',', 
 Token IDs:  [2256, 2814, 2180, 1005, 1056, 4965, 2023, 4106, 1010, 2292, 2894, 1996, 2279, 2028, 2057, 16599, 1012]
 '''
 
-# models
-from transformers import AdamW, BertConfig
-from transformers import AutoModelForSequenceClassification
+
 def ret_model(args):
     if args.test:
       print('test 모델 로드')
