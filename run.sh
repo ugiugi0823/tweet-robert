@@ -17,7 +17,7 @@ wandb login --relogin '2be184e31a96c722bfebdfe35f726042eb8e526c'
 # 주의!!! lr 은 바꾸지 마세요! .sh 로 실행하니까, 문제 생겨요. main.py 는 상관없어요!
 
 python main.py \
-    --drive True \
+    --drive \
     --data 'result_all' \
     --batch_size 256 \
     --optimizer 'sgd' \
@@ -27,7 +27,7 @@ python main.py \
     --project_name 'inisw08-twitter-sentiment-analysis-roberta' \
     --entity_name 'inisw08' \
     --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta' \
-    --test False \
+    --test \
     --test_data 'test' \
     --test_model_name 'ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all' \
     --project_test_name 'which-SA-model-is-test'
