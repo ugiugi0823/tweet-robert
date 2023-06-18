@@ -14,7 +14,7 @@ huggingface-cli login --token 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
 # 2be184e31a96c722bfebdfe35f726042eb8e526c
 # 현욱
 # 122f007f67ba33fd04a03ee9b81489dfb42264a6
-wandb login --relogin '2be184e31a96c722bfebdfe35f726042eb8e526c'
+wandb login --relogin '122f007f67ba33fd04a03ee9b81489dfb42264a6'
 
 
 
