@@ -161,14 +161,15 @@ def setup(args):
   if args.drive:
     assert 'drive' in os.listdir('/content') # 당황하지 마세요! 드라이브 연결을 안해놓았어요! 코랩 드라이브 연결해주세요!
     print('구글 코랩 드라이브로 시작합니다.')
-    os.makedirs("inisw08", exist_ok=True)
-    os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}", exist_ok=True)
-    os.makedirs(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}", exist_ok=True)
+    os.makedirs("/content/drive/MyDrive/inisw08", exist_ok=True)
+    os.makedirs(f"/content/drive/MyDrive/inisw08/tweet-sa-roberta/{model_fold_name}", exist_ok=True)
+    os.makedirs(f"/content/drive/MyDrive/inisw08/tweet-sa-roberta/{model_fold_name}/{run_name}", exist_ok=True)
     
   else:
     print('로컬로 시작합니다!')
-    os.makedirs(f"./{model_fold_name}", exist_ok=True)
-    os.makedirs(f"./{model_fold_name}/{run_name}", exist_ok=True)
+    os.makedirs(f"/content/inisw08", exist_ok=True)
+    os.makedirs(f"/content/inisw08/tweet-sa-roberta/{model_fold_name}", exist_ok=True)
+    os.makedirs(f"/content/inisw08/tweet-sa-roberta/{model_fold_name}/{run_name}", exist_ok=True)
 
 
   
