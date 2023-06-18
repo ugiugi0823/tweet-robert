@@ -7,9 +7,9 @@ import datetime
 
 import numpy as np
 
-from models import ret_model
+from util.models import ret_model
 from etc.utils import ret_optim, ret_scheduler, format_time, flat_accuracy
-from dataloader import ret_dataloader
+from util.dataloader import ret_dataloader
 
 
     # This training code is based on the `run_glue.py` script here:
