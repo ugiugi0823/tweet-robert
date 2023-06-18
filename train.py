@@ -228,9 +228,9 @@ def train(args):
           
           
           if args.drive:
-            model.save_pretrained(f"/content/drive/MyDrive/inisw08/{model_fold_name}/{run_name}")
+            model.save_pretrained(f"/content/drive/MyDrive/inisw08/tweet-sa-roberta/{model_fold_name}/{run_name}")
           else:
-            model.save_pretrained(f"./{model_fold_name}/{run_name}")
+            model.save_pretrained(f"/content/inisw08/tweet-sa-roberta/{model_fold_name}/{run_name}")
             
         else:
           print('최고 갱신 못했어요!')
