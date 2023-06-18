@@ -14,7 +14,7 @@ wandb login --relogin '2be184e31a96c722bfebdfe35f726042eb8e526c'
 
 
 
-# 주의!!! lr 은 바꾸지 마세요! .sh 로 실행하니까, 문제 생겨요. main.py 는 상관없어요!
+
 
 python main.py \
     --drive \
