@@ -130,7 +130,7 @@ def test(args):
   # y_pred_v_t = np.transpose(y_pred_v)
   # combined_array = np.vstack((y_pred_v, y_an_v_t))
   # df = pd.DataFrame(combined_array)
-  # df.to_csv('sdfs.csv', index=False)
+  # df.to_csv('shape.csv', index=False)
   
   # Report the final accuracy for this test run.
   avg_val_accuracy = total_eval_accuracy / len(test_dataloader)
