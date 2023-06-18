@@ -1,7 +1,7 @@
 # dataloader
 import wandb
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from dataset import get_dataset
+from util.dataset import get_dataset
 
 # WANDB PARAMETER
 def ret_dataloader(args):
