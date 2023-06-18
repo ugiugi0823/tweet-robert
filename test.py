@@ -1,14 +1,17 @@
 # test
-import random
-import numpy as np
-import datetime
 import time
 import torch
 import wandb
-from models import ret_model
-from utils import format_time, flat_accuracy, get_arr
-from dataloader import ret_dataloader
+import random
+import datetime
+
+
+import numpy as np
 import pandas as pd
+
+from models import ret_model
+from etc.utils import format_time, flat_accuracy, get_arr
+from dataloader import ret_dataloader
 from sklearn import metrics
 
 def test(args):
