@@ -1,12 +1,14 @@
 # train
-import random
-import numpy as np
-import datetime
 import time
 import torch
 import wandb
+import random
+import datetime
+
+import numpy as np
+
 from models import ret_model
-from utils import ret_optim, ret_scheduler, format_time, flat_accuracy
+from etc.utils import ret_optim, ret_scheduler, format_time, flat_accuracy
 from dataloader import ret_dataloader
 
 
