@@ -1,6 +1,6 @@
 # dataset
 from torch.utils.data import TensorDataset, random_split
-from utils import get_input_mask_label
+from etc.utils import get_input_mask_label
 
 def get_dataset(args):
   input_ids, attention_masks, labels = get_input_mask_label(args)
