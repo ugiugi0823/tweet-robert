@@ -9,10 +9,12 @@ import datetime
 import numpy as np
 import pandas as pd
 
-from models import ret_model
-from etc.utils import format_time, flat_accuracy, get_arr
-from dataloader import ret_dataloader
 from sklearn import metrics
+
+from util.models import ret_model
+from etc.utils import format_time, flat_accuracy, get_arr
+from util.dataloader import ret_dataloader
+
 
 def test(args):
   # args
