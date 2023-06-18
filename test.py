@@ -118,7 +118,10 @@ def test(args):
   print('test 완료!!!') 
   confusion_matrix = metrics.confusion_matrix(y_an, y_pred)
   # print(confusion_matrix.shape)
+  print("+++++++++++ confusion_matrix +++++++++++++")
+  
   print(confusion_matrix)
+  print("++++++++++++++++++++++++++++++++")
   
   # y_an_v = np.array(y_an)
   # y_an_v_t = np.transpose(y_an_v)
