@@ -37,6 +37,6 @@ python main.py \
     --model_fold_name 'inisw08-twitter-sentiment-analysis-roberta' \
     --test \
     --test_data 'test_final' \
-    --test_model_name 'ugiugi/inisw08-twitter-sentiment-analysis-roberta-ep30-bs256-all' \
+    --test_model_name 'cardiffnlp/twitter-roberta-base-sentiment' \
     --project_test_name 'which-SA-model-is-test'
     
